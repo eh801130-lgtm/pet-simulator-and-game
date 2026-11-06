@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#6541a5">
+  <title>Pet Paradise</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="layout">
+    <section class="world-wrap" aria-label="Pet play area">
+      <header class="world-header"><div><span class="eyebrow">YOUR LITTLE WORLD</span><h1>Pet Paradise</h1></div><div class="weather">☀️ <span>Sunny day</span></div></header>
+      <div id="world" class="world">
+        <div class="cloud cloud-one"></div><div class="cloud cloud-two"></div>
+        <div class="world-hint">Click anywhere to call your pet over · Use WASD or arrow keys</div>
+        <div class="plant plant-one">🌿</div><div class="plant plant-two">🪴</div>
+        <div id="pet" class="pet" role="button" tabindex="0" aria-label="Mochi the cat">
+          <div class="pet-shadow"></div><div class="pet-art"><span class="ear ear-left"></span><span class="ear ear-right"></span><span class="pet-face"><i class="eye eye-left"></i><i class="eye eye-right"></i><i class="nose"></i><i class="mouth"></i><i class="cheek cheek-left"></i><i class="cheek cheek-right"></i></span><span class="accessory"></span></div>
+        </div>
+        <div id="speech" class="speech hidden" role="status"></div>
+        <div class="world-floor"></div>
+      </div>
+      <footer class="world-footer"><span>♡ <b id="mood-label">Feeling cozy</b></span><span>Take good care of your friend!</span></footer>
+    </section>
+
+    <aside class="sidebar">
+      <section class="profile"><div class="avatar">🐾</div><div><span class="eyebrow">YOUR COMPANION</span><h2 id="name-heading">Mochi</h2></div><span class="level">LVL 01</span></section>
+      <section class="card stats" aria-label="Pet needs">
+        <div class="stat"><div><span>🍓 Hunger</span><b id="hunger-value">75%</b></div><div class="meter"><i id="hunger-bar"></i></div></div>
+        <div class="stat"><div><span>✨ Happiness</span><b id="happiness-value">80%</b></div><div class="meter pink"><i id="happiness-bar"></i></div></div>
+        <div class="stat"><div><span>⚡ Energy</span><b id="energy-value">85%</b></div><div class="meter yellow"><i id="energy-bar"></i></div></div>
+        <div class="stat"><div><span>🫧 Clean</span><b id="clean-value">90%</b></div><div class="meter blue"><i id="clean-bar"></i></div></div>
+      </section>
+      <section class="card"><div class="section-title"><h3>Care for Mochi</h3><span>♡</span></div><div class="care-grid"><button data-care="feed"><span>🍓</span>Feed</button><button data-care="play"><span>🎾</span>Play</button><button data-care="cuddle"><span>🤍</span>Cuddle</button><button data-care="clean"><span>🫧</span>Clean</button></div></section>
+      <details class="card customize" open><summary><span>🎨</span> Make them yours <span class="summary-arrow">⌄</span></summary><div class="custom-fields">
+        <label>Pet name<input id="pet-name" type="text" maxlength="16" value="Mochi"></label>
+        <label>Creature<select id="pet-type"><option value="cat">Kitty</option><option value="dog">Puppy</option><option value="bunny">Bunny</option><option value="fox">Fox</option><option value="robot">Robot</option></select></label>
+        <div class="color-row"><label>Coat color<input id="fur-color" type="color" value="#f3a5b8"></label><label>Accessory color<input id="accent-color" type="color" value="#7858d6"></label></div>
+        <label>Accessory<select id="pet-accessory"><option value="none">No accessory</option><option value="bow">Cute bow</option><option value="hat">Party hat</option><option value="star">Lucky star</option><option value="crown">Tiny crown</option></select></label>
+        <label class="upload">Upload a pet picture<input id="pet-upload" type="file" accept="image/*"><span>Choose an image from your device</span></label>
+        <button id="reset-image" class="text-button" type="button">Use my illustrated pet again</button>
+      </div></details>
+      <section class="card games"><div class="section-title"><h3>Play together</h3><span>🎮</span></div><div class="game-grid"><button data-game="pacman"><span>🟡</span>Pac-Man</button><button data-game="pong"><span>🏓</span>Pong</button><button data-game="ttt"><span>⭕</span>Tic-Tac-Toe</button><button data-game="chess"><span>♟️</span>Chess</button></div></section>
+      <p class="sidebar-note">A little care goes a long way 🌼</p>
+    </aside>
+  </main>
+
+  <div id="game-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="game-title"><section class="game-window"><header class="game-header"><div><span class="eyebrow">A LITTLE FRIENDLY COMPETITION</span><h2 id="game-title">Let's play!</h2></div><button id="close-game" class="close-button" aria-label="Close game">×</button></header><div id="game-content"></div></section></div>
+  <script src="script.js"></script>
+</body>
+</html>
